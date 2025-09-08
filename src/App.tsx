@@ -73,9 +73,9 @@ function App() {
           <h1>Алексей Вохмин</h1>
           <h2>React/TypeScript разработчик</h2>
           <div className="blobs pointer-events-none">
-            <div className="blob bg-green-300/50 animate-circular-mirrored duration-[100s] transition-transform"></div>
-            <div className="blob bg-blue-100/50 animate-circular duration-[80s] transition-transform"></div>
-            <div className="blob bg-orange-500/50 animate-circular-mirrored duration-[120s] transition-transform"></div>
+            <div className="blob bg-green-500/70 md:bg-green-500/50 animate-circular-mirrored duration-[100s] transition-transform"></div>
+            <div className="blob bg-blue-500/70 md:bg-blue-500/50 animate-circular duration-[80s] transition-transform"></div>
+            <div className="blob bg-orange-500/70 md:bg-orange-500/50 animate-circular-mirrored duration-[120s] transition-transform"></div>
           </div>
         </div>
       </header>
@@ -129,7 +129,7 @@ function App() {
               tasks={
                 <p>
                   Занимался версткой по дизайну в Figma, а также разработкой
-                  архитектуры, адаптивностью, анимациями и SEO.
+                  архитектуры, адаптивностью, анимациями и SEO
                 </p>
               }
               stack={["React", "TypeScript", "Next.js", "Tailwind CSS"]}
@@ -143,7 +143,7 @@ function App() {
                 <p>
                   Занимался версткой по дизайну в Figma и внесением изменений в
                   предложенный дизайн, а также разработкой архитектуры, backend,
-                  адаптивностью, анимациями и SEO.
+                  адаптивностью, анимациями и SEO
                 </p>
               }
               stack={[
@@ -164,7 +164,7 @@ function App() {
               tasks={
                 <p>
                   Занимался версткой по дизайну в Figma, разработкой
-                  архитектуры, backend, адаптивностью и SEO.
+                  архитектуры, backend, адаптивностью и SEO
                 </p>
               }
               stack={[
@@ -183,7 +183,7 @@ function App() {
               tasks={
                 <p>
                   Занимался front-end разработкой, включая создание компонентов,
-                  интеграцию с API и обеспечение отзывчивого дизайна.
+                  интеграцию с API и обеспечение отзывчивого дизайна
                 </p>
               }
               stack={[
@@ -205,7 +205,7 @@ function App() {
                 <p>
                   Разработка приложения на Unity с использованием C# и
                   интеграцией Eye Tracking для интерактивного обучения химии в
-                  виртуальной реальности для HTC Vive Pro Eye.
+                  виртуальной реальности для HTC Vive Pro Eye
                 </p>
               }
               stack={["Unity", "C#", "SRanipal", "Python"]}
@@ -217,7 +217,7 @@ function App() {
               url="https://curseforge.com/minecraft/mc-mods/get-exp-for-everything"
               image="https://raw.githubusercontent.com/gosvoh/GetExpForEverything/1.17/src/main/resources/logo.jpeg"
               tasks={
-                <p>Разработка мода на Java с использованием Minecraft Forge.</p>
+                <p>Разработка мода на Java с использованием Minecraft Forge</p>
               }
               stack={["Java", "Minecraft Forge"]}
             />
@@ -227,7 +227,7 @@ function App() {
               url="https://serova.careers"
               image="https://serova.careers/favicon.ico"
               tasks={
-                <p>Занимался дизайном, версткой, разработкой backend и SEO.</p>
+                <p>Занимался дизайном, версткой, разработкой backend и SEO</p>
               }
               stack={["React", "TypeScript", "Next.js", "Tailwind CSS"]}
             />
