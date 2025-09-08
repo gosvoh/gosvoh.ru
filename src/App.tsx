@@ -1,94 +1,18 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "./lib/utils";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "./components/ui/button";
-import { ExternalLink, MailIcon } from "lucide-react";
+import { MailIcon } from "lucide-react";
 import {
   SiVk,
   SiTelegram,
   SiGithub,
   SiDiscord,
-  type IconType,
 } from "@icons-pack/react-simple-icons";
 import BioconLogo from "./assets/biocon-logo.png";
 import ChemLabLogo from "./assets/chem-lab-logo.jpg";
 import LmsLogo from "./assets/lms-logo.png";
 import { useEffect } from "react";
-
-function ProjectCard({
-  title,
-  description,
-  url,
-  github,
-  image,
-}: {
-  title: string;
-  description: string;
-  url?: string;
-  github?: string;
-  image?: string;
-}) {
-  return (
-    <Card className="flex flex-col card">
-      <CardHeader>
-        <CardTitle className="inline-flex items-center gap-4">
-          {title}
-          {image && (
-            <Avatar>
-              <AvatarImage
-                src={image}
-                alt="Фотография Алексея Вохмина на фоне зимнего леса"
-              />
-            </Avatar>
-          )}
-        </CardTitle>
-        {url && (
-          <CardDescription>
-            <a href={url} target="_blank">
-              {url.replace(/https?:\/\//, "")}
-            </a>
-          </CardDescription>
-        )}
-      </CardHeader>
-      <CardContent>
-        <p className="text-base md:text-lg">{description}</p>
-      </CardContent>
-      <CardFooter className="flex flex-row gap-4 mt-auto">
-        {url && (
-          <Button variant="outline" size="icon" asChild>
-            <a href={url} target="_blank">
-              <ExternalLink />
-            </a>
-          </Button>
-        )}
-        {github && (
-          <Button variant="outline" size="icon" asChild>
-            <a href={github} target="_blank">
-              <SiGithub />
-            </a>
-          </Button>
-        )}
-      </CardFooter>
-    </Card>
-  );
-}
-
-function SocialLink({ href, Icon }: { href: string; Icon: IconType }) {
-  return (
-    <Button variant="outline" size="icon-auto" asChild>
-      <a href={href} target="_blank">
-        <Icon size={32} />
-      </a>
-    </Button>
-  );
-}
+import ProjectCard from "./components/ProjectCard";
+import SocialLink from "./components/SocialLink";
 
 function App() {
   useEffect(() => {
@@ -149,14 +73,19 @@ function App() {
             разработки.
           </p>
           <p>
-            В настоящее время являюсь сотрудником и студентом магистратуры по
-            направлению &#171;Веб-технологии&#187; в{" "}
+            Выпускник бакалавриата по направлению &#171;Программная
+            инженерия&#187; (специализация &#171;Разработка графических и
+            веб-приложений&#187;, 2023) и магистратуры по направлению
+            &#171;Веб-технологии&#187; (2025).
+          </p>
+          <p>
+            В настоящее время являюсь сотрудником{" "}
             <a
               href="https://itmo.ru/"
               target="_blank"
               className="font-bold hover:underline"
             >
-              Университете ИТМО
+              Университета ИТМО
             </a>
             .
           </p>
