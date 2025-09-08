@@ -17,12 +17,16 @@ export default function ProjectCard({
   url,
   github,
   image,
+  tasks,
+  stack,
 }: {
   title: string;
   description: string;
   url?: string;
   github?: string;
   image?: string;
+  tasks?: React.ReactNode;
+  stack?: string[];
 }) {
   return (
     <Card className="flex flex-col card">
@@ -38,13 +42,25 @@ export default function ProjectCard({
         {url && (
           <CardDescription>
             <a href={url} target="_blank">
-              {url.replace(/https?:\/\//, "")}
+              {url.replace(/^(https?:\/\/)|\/$/g, "")}
             </a>
           </CardDescription>
         )}
       </CardHeader>
       <CardContent>
         <p className="text-base md:text-lg">{description}</p>
+        {tasks && (
+          <div className="mt-4 **:text-base **:md:text-lg">{tasks}</div>
+        )}
+        {stack && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {stack.map((tech) => (
+              <span key={tech} className="bg-muted px-2 py-1 rounded text-sm">
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </CardContent>
       <CardFooter className="flex flex-row gap-4 mt-auto">
         {url && (

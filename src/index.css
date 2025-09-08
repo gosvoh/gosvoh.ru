@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin 'tailwindcss-animate';
 
@@ -50,6 +50,9 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
+  --animate-circular: circular 8s linear infinite;
+  --animate-circular-mirrored: circular-mirrored 8s linear infinite;
+
   @keyframes accordion-down {
     from {
       height: 0;
@@ -58,12 +61,49 @@
       height: var(--radix-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--radix-accordion-content-height);
     }
     to {
       height: 0;
+    }
+  }
+
+  @keyframes circular {
+    0% {
+      transform: translate(75px, 0);
+    }
+    25% {
+      transform: translate(150px, 75px);
+    }
+    50% {
+      transform: translate(75px, 150px);
+    }
+    75% {
+      transform: translate(0, 75px);
+    }
+    100% {
+      transform: translate(75px, 0);
+    }
+  }
+
+  @keyframes circular-mirrored {
+    0% {
+      transform: translate(75px, 150px);
+    }
+    25% {
+      transform: translate(0, 75px);
+    }
+    50% {
+      transform: translate(75px, 0);
+    }
+    75% {
+      transform: translate(150px, 75px);
+    }
+    100% {
+      transform: translate(75px, 150px);
     }
   }
 }
@@ -147,46 +187,43 @@
   }
 }
 
-.cards:hover > .card::after {
-  opacity: 1;
+.cards:hover > .card::after,
+.card:hover::before {
+  @apply opacity-100;
 }
 
 .card {
-  background-color: transparent;
-  position: relative;
+  @apply bg-transparent relative;
+
+  &::before,
+  &::after {
+    @apply content-[""] rounded-[inherit] absolute h-full w-full opacity-0 left-0 top-0;
+    @apply transition-opacity duration-[500ms];
+    @apply -z-10;
+  }
+
+  &::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.025),
+      transparent 40%
+    );
+  }
+
+  &::after {
+    background: radial-gradient(
+      600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.05),
+      transparent 40%
+    );
+  }
 }
 
-.card:hover::before {
-  opacity: 1;
-}
+.blobs {
+  @apply w-full h-full block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  @apply -z-20;
 
-.card::before,
-.card::after {
-  border-radius: inherit;
-  content: "";
-  height: 100%;
-  left: 0px;
-  opacity: 0;
-  position: absolute;
-  top: 0px;
-  transition: opacity 500ms;
-  width: 100%;
-}
-
-.card::before {
-  background: radial-gradient(
-    800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.025),
-    transparent 40%
-  );
-  z-index: -1;
-}
-
-.card::after {
-  background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.05),
-    transparent 40%
-  );
-  z-index: -1;
+  .blob {
+    @apply h-1/2 aspect-square rounded-full absolute blur-3xl mix-blend-multiply;
+  }
 }
