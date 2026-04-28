@@ -43,7 +43,7 @@ export const PROFILE = {
   site: "gosvoh.ru",
   english: "B2",
   experienceYears: "4+",
-  bio: "Fullstack-разработчик с 4+ годами опыта. Разрабатываю клиент и сервер, проектирую API, настраиваю аутентификацию, работаю с SSR, Docker, CI/CD и деплоем на Linux. Опыт самостоятельной разработки и работы в командах до 7–8 человек",
+  bio: "Fullstack-разработка: frontend и backend приложений, проектирую API, настраиваю аутентификацию, работаю с SSR, Docker, CI/CD и деплоем на Linux. Опыт самостоятельной разработки и работы в командах до 7–8 человек",
   edu: [
     { year: "2025", degree: "Магистр", field: "Веб-технологии · ИТМО" },
     { year: "2023", degree: "Бакалавр", field: "Программная инженерия · ИТМО" },
@@ -116,20 +116,12 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Факультет биотехнологий ИТМО",
-    description:
-      "Обновлённый сайт факультета биотехнологий Университета ИТМО",
+    description: "Обновлённый сайт факультета биотехнологий Университета ИТМО",
     url: "https://biotech.cedne.ru/",
     image: "https://biotech.industries/favicon.ico",
     tasks:
       "Самостоятельная fullstack-разработка: frontend, backend на Prisma, аутентификация Auth.js, SEO",
-    stack: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind",
-      "Prisma",
-      "Auth.js",
-    ],
+    stack: ["React", "TypeScript", "Next.js", "Tailwind", "Prisma", "Auth.js"],
     year: "2024",
   },
   {

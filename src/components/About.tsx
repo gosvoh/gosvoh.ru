@@ -22,7 +22,8 @@ export default function About() {
           <p className="my-3 max-w-[60ch] text-[clamp(15px,1.5vw,17px)] leading-relaxed text-fg-muted">
             Участвовал в создании и развитии 10+ проектов: корпоративные сайты,
             внутренние сервисы, образовательные платформы. Разрабатываю API,
-            настраиваю CI/CD, поддерживаю Docker-инфраструктуру на Linux-серверах
+            настраиваю CI/CD, поддерживаю Docker-инфраструктуру на
+            Linux-серверах
           </p>
           <p className="my-3 max-w-[60ch] text-[clamp(15px,1.5vw,17px)] leading-relaxed text-fg-muted">
             Сейчас — программист в{" "}
@@ -58,8 +59,12 @@ export default function About() {
 
           <Block title="// Контакты">
             <div className="font-mono text-[12px] leading-[1.7] text-fg-muted">
-              <div>{PROFILE.email}</div>
-              <div>{PROFILE.phone}</div>
+              <div>
+                <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
+              </div>
+              <div>
+                <a href={`tel:${PROFILE.phone}`}>{PROFILE.phone}</a>
+              </div>
             </div>
           </Block>
         </aside>
