@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
     tasks:
       "Полный fullstack кроме дизайна: frontend, backend, архитектура, адаптивность, анимации, SEO",
     stack: ["React", "TypeScript", "Next.js", "Tailwind"],
-    year: "2024",
+    year: "2023",
     featured: true,
   },
   {
@@ -122,7 +122,7 @@ export const PROJECTS: Project[] = [
     tasks:
       "Самостоятельная fullstack-разработка: frontend, backend на Prisma, аутентификация Auth.js, SEO",
     stack: ["React", "TypeScript", "Next.js", "Tailwind", "Prisma", "Auth.js"],
-    year: "2024",
+    year: "2026",
   },
   {
     title: "BIOCON",
@@ -146,7 +146,7 @@ export const PROJECTS: Project[] = [
     tasks:
       "Frontend-разработка: компоненты, интеграция с API, адаптивность, обновление UI",
     stack: ["React", "TypeScript", "Vite", "Tailwind", "antd", "Editor.js"],
-    year: "2024",
+    year: "2023",
   },
   {
     title: "Narupa ITMO SCAMT",
@@ -159,7 +159,7 @@ export const PROJECTS: Project[] = [
     tasks:
       "Разработка на Unity + C#, интеграция Eye Tracking для HTC Vive Pro Eye",
     stack: ["Unity", "C#", "SRanipal", "Python"],
-    year: "2023",
+    year: "2022",
   },
   {
     title: "Get exp for everything",
@@ -171,7 +171,7 @@ export const PROJECTS: Project[] = [
       "https://raw.githubusercontent.com/gosvoh/GetExpForEverything/1.17/src/main/resources/logo.jpeg",
     tasks: "Разработка мода на Java с Minecraft Forge",
     stack: ["Java", "Minecraft Forge"],
-    year: "2021",
+    year: "2022",
   },
   {
     title: "SEROVA.CAREERS",

@@ -12,7 +12,7 @@ export default function Projects() {
       <SectionHead
         eyebrow="03 / Работы"
         title="Избранные проекты"
-        meta={`${PROJECTS.length} проектов · 2021—2026`}
+        meta={`${PROJECTS.length} проектов · 2022—2026`}
       />
 
       <Marquee items={STACK_HIGHLIGHTS} />
