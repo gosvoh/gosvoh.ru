@@ -3,7 +3,10 @@ import { PROFILE, STACK_HIGHLIGHTS } from "@/data/site";
 
 export default function About() {
   return (
-    <section id="about" className="my-[clamp(56px,9vw,120px)]">
+    <section
+      id="about"
+      className="my-[clamp(56px,9vw,120px)] scroll-mt-[clamp(20px,4vw,56px)]"
+    >
       <SectionHead
         eyebrow="01 / Обо мне"
         title={
@@ -15,7 +18,7 @@ export default function About() {
       />
 
       <div className="grid items-start gap-[clamp(20px,3vw,36px)] md:grid-cols-[2fr_1fr]">
-        <div className="rounded-[20px] border border-line bg-bg-glass p-[clamp(28px,4vw,48px)] shadow-[var(--shadow-glass-sm)] backdrop-blur-2xl backdrop-saturate-180">
+        <div className="rounded-[20px] border border-line bg-bg-glass p-[clamp(28px,4vw,48px)] shadow-(--shadow-glass-sm) backdrop-blur-2xl backdrop-saturate-180">
           <p className="mb-6 max-w-[36ch] font-display text-[clamp(20px,2.4vw,30px)] font-medium leading-[1.35] tracking-[-0.02em] text-fg">
             {PROFILE.bio}
           </p>
@@ -38,7 +41,7 @@ export default function About() {
           </p>
         </div>
 
-        <aside className="flex flex-col gap-5 rounded-[20px] border border-line bg-bg-glass p-[clamp(20px,3vw,32px)] shadow-[var(--shadow-glass-sm)] backdrop-blur-2xl backdrop-saturate-180">
+        <aside className="flex flex-col gap-5 rounded-[20px] border border-line bg-bg-glass p-[clamp(20px,3vw,32px)] shadow-(--shadow-glass-sm) backdrop-blur-2xl backdrop-saturate-180">
           <Block title="// Стек">
             <div className="flex flex-wrap gap-1.5">
               {STACK_HIGHLIGHTS.map((s) => (

@@ -3,8 +3,8 @@ import { PROFILE } from "@/data/site";
 
 export default function Hero() {
   return (
-    <header className="grid items-center gap-[clamp(20px,5vw,64px)] rounded-3xl border border-line bg-bg-glass-strong p-[clamp(20px,4vw,48px)] backdrop-blur-[28px] backdrop-saturate-200 shadow-[var(--shadow-glass-lg)] md:grid-cols-[minmax(180px,1fr)_2fr] text-center md:text-left">
-      <div className="relative mx-auto aspect-square w-[clamp(140px,22vw,260px)] overflow-hidden rounded-[28px] border border-line-strong shadow-[var(--shadow-glass-lg)]">
+    <header className="grid items-center gap-[clamp(20px,5vw,64px)] rounded-3xl border border-line bg-bg-glass-strong p-[clamp(20px,4vw,48px)] backdrop-blur-[28px] backdrop-saturate-200 shadow-(--shadow-glass-lg) md:grid-cols-[minmax(180px,1fr)_2fr] text-center md:text-left">
+      <div className="relative mx-auto aspect-square w-[clamp(140px,22vw,260px)] overflow-hidden rounded-[28px] border border-line-strong shadow-(--shadow-glass-lg)">
         <img
           src={Gosvoh}
           alt="Алексей Вохмин"
@@ -18,13 +18,14 @@ export default function Hero() {
 
       <div className="flex flex-col items-center md:items-start">
         <span className="eyebrow-line">Fullstack · 2026</span>
-        <h1 className="mt-3 mb-4 font-display text-[clamp(36px,6vw,72px)] font-bold leading-[1] tracking-[-0.03em]">
+        <h1 className="mt-3 mb-4 font-display text-[clamp(36px,6vw,72px)] font-bold leading-none tracking-[-0.03em]">
           Алексей
           <br />
           Вохмин
         </h1>
         <p className="mb-6 max-w-[36ch] text-[clamp(16px,2vw,22px)] font-normal leading-snug tracking-[-0.01em] text-fg-muted">
-          {PROFILE.title}. {PROFILE.subtitle}. {PROFILE.experienceYears} года практического опыта разработки
+          {PROFILE.title}. {PROFILE.subtitle}. {PROFILE.experienceYears} года
+          практического опыта разработки
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
           <Chip>

@@ -8,7 +8,7 @@ export default function Projects() {
   const rest = PROJECTS.filter((p) => !p.featured);
 
   return (
-    <section id="work" className="my-[clamp(56px,9vw,120px)]">
+    <section id="work" className="my-[clamp(56px,9vw,120px)] scroll-mt-[clamp(20px,4vw,56px)]">
       <SectionHead
         eyebrow="03 / Работы"
         title="Избранные проекты"

@@ -30,18 +30,16 @@ export default function ProjectCard({
     .join("")
     .toUpperCase();
 
-  const cleanUrl = p.url
-    ? p.url.replace(/^https?:\/\/|\/$/g, "")
-    : "private";
+  const cleanUrl = p.url ? p.url.replace(/^https?:\/\/|\/$/g, "") : "private";
 
   return (
     <article
       ref={ref}
       className={cn(
-        "group relative isolate flex flex-col overflow-hidden rounded-[20px] border border-line bg-bg-glass p-[clamp(20px,2.4vw,28px)] backdrop-blur-2xl backdrop-saturate-180 transition-all duration-[350ms] [transition-timing-function:cubic-bezier(0.2,0.8,0.2,1)] hover:-translate-y-0.5 hover:border-line-strong hover:shadow-[var(--shadow-glass-lg)]",
+        "group relative isolate flex flex-col overflow-hidden rounded-[20px] border border-line bg-bg-glass p-[clamp(20px,2.4vw,28px)] backdrop-blur-2xl backdrop-saturate-180 transition-all duration-350 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:-translate-y-0.5 hover:border-line-strong hover:shadow-(--shadow-glass-lg)",
         featured && "p-[clamp(24px,3vw,36px)]",
-        "before:absolute before:inset-0 before:-z-10 before:opacity-0 before:transition-opacity before:duration-[400ms] before:content-[''] hover:before:opacity-100",
-        "before:[background:radial-gradient(circle_320px_at_var(--mx,50%)_var(--my,50%),var(--color-accent-soft),transparent_60%)]"
+        "before:absolute before:inset-0 before:-z-10 before:opacity-0 before:transition-opacity before:duration-400 before:content-[''] hover:before:opacity-100",
+        "before:[background:radial-gradient(circle_320px_at_var(--mx,50%)_var(--my,50%),var(--color-accent-soft),transparent_60%)]",
       )}
     >
       <header className="mb-4 flex items-start justify-between gap-4">
@@ -67,7 +65,7 @@ export default function ProjectCard({
           "mb-2 font-display font-semibold leading-[1.2] tracking-[-0.02em]",
           featured
             ? "text-[clamp(22px,2.4vw,30px)]"
-            : "text-[clamp(18px,1.8vw,22px)]"
+            : "text-[clamp(18px,1.8vw,22px)]",
         )}
       >
         {p.title}
@@ -75,8 +73,8 @@ export default function ProjectCard({
 
       <p
         className={cn(
-          "mb-4 leading-[1.5] text-fg-muted",
-          featured ? "max-w-[50ch] text-[16px]" : "text-[14px]"
+          "mb-4 leading-normal text-fg-muted",
+          featured ? "max-w-[50ch] text-[16px]" : "text-[14px]",
         )}
       >
         {p.description}
@@ -93,7 +91,7 @@ export default function ProjectCard({
           {p.stack.map((s) => (
             <span
               key={s}
-              className="rounded-full border border-line bg-bg-glass-strong px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.05em] text-fg-muted"
+              className="rounded-full border border-line bg-bg-glass-strong px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-fg-muted"
             >
               {s}
             </span>
@@ -108,7 +106,7 @@ export default function ProjectCard({
         <div className="flex gap-2">
           {p.url && (
             <a
-              className="grid size-[30px] place-items-center rounded-lg border border-line bg-bg-glass-strong text-fg-muted transition-all duration-200 hover:-translate-y-px hover:border-line-strong hover:text-fg"
+              className="grid size-7.5 place-items-center rounded-lg border border-line bg-bg-glass-strong text-fg-muted transition-all duration-200 hover:-translate-y-px hover:border-line-strong hover:text-fg"
               href={p.url}
               target="_blank"
               rel="noreferrer"
@@ -128,7 +126,7 @@ export default function ProjectCard({
           )}
           {p.github && (
             <a
-              className="grid size-[30px] place-items-center rounded-lg border border-line bg-bg-glass-strong text-fg-muted transition-all duration-200 hover:-translate-y-px hover:border-line-strong hover:text-fg"
+              className="grid size-7.5 place-items-center rounded-lg border border-line bg-bg-glass-strong text-fg-muted transition-all duration-200 hover:-translate-y-px hover:border-line-strong hover:text-fg"
               href={p.github}
               target="_blank"
               rel="noreferrer"

@@ -9,9 +9,9 @@ import SiteFooter from "@/components/SiteFooter";
 
 function App() {
   return (
-    <div className="relative isolate min-h-full overflow-hidden bg-bg-base font-sans text-fg">
+    <div className="relative isolate min-h-full overflow-clip bg-bg-base font-sans text-fg">
       <SiteBackdrop />
-      <div className="relative z-[2] mx-auto max-w-[1280px] p-[clamp(20px,4vw,56px)]">
+      <div className="relative z-2 mx-auto max-w-7xl p-[clamp(20px,4vw,56px)]">
         <TopBar />
         <Hero />
         <About />
