@@ -30,7 +30,8 @@ export default function ProjectCard({
     .join("")
     .toUpperCase();
 
-  const cleanUrl = p.url ? p.url.replace(/^https?:\/\/|\/$/g, "") : "private";
+  const cleanUrl = p.url ? p.url.replace(/^https?:\/\/|\/$/g, "") : null;
+  const hasFooter = Boolean(cleanUrl || p.github);
 
   return (
     <article
@@ -99,10 +100,15 @@ export default function ProjectCard({
         </div>
       )}
 
-      <footer className="mt-4 flex items-center justify-between border-t border-line pt-3.5">
-        <span className="max-w-[70%] truncate font-mono text-[11px] text-fg-muted">
-          {cleanUrl}
-        </span>
+      {hasFooter && (
+      <footer className="mt-4 flex items-center justify-between gap-2 border-t border-line pt-3.5">
+        {cleanUrl ? (
+          <span className="max-w-[70%] truncate font-mono text-[11px] text-fg-muted">
+            {cleanUrl}
+          </span>
+        ) : (
+          <span aria-hidden="true" />
+        )}
         <div className="flex gap-2">
           {p.url && (
             <a
@@ -144,6 +150,7 @@ export default function ProjectCard({
           )}
         </div>
       </footer>
+      )}
     </article>
   );
 }

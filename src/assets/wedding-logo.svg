@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Свадебный планер">
+  <rect width="64" height="64" rx="14" fill="#faf5f3"/>
+  <circle cx="25" cy="34" r="13" fill="none" stroke="#b07c52" stroke-width="3.5"/>
+  <circle cx="39" cy="34" r="13" fill="none" stroke="#c9956b" stroke-width="3.5"/>
+  <path d="M 39 14 L 42 17 L 39 20 L 36 17 Z" fill="#c9956b"/>
+</svg>

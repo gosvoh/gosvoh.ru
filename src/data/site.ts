@@ -1,6 +1,8 @@
 import BioconLogo from "@/assets/biocon-logo.png";
 import LmsLogo from "@/assets/lms-logo.png";
 import EditorjsLogo from "@/assets/editorjs-logo.svg";
+import WorktimeLogo from "@/assets/worktime-logo.svg";
+import WeddingLogo from "@/assets/wedding-logo.svg";
 
 export type Project = {
   title: string;
@@ -125,6 +127,59 @@ export const PROJECTS: Project[] = [
     year: "2026",
   },
   {
+    title: "Biotech.Foundation",
+    description:
+      "Лендинг мероприятия факультета биотехнологий ИТМО — регистрация участников, галерея, SEO",
+    url: "https://biotech.foundation",
+    github: "https://github.com/gosvoh/biotech-foundation",
+    image: "https://biotech.foundation/favicon.ico",
+    tasks:
+      "Самостоятельная fullstack-разработка: Next.js 16 (App Router, standalone), форма регистрации со server actions и SMTP-рассылкой, Docker, Pino-логи",
+    stack: ["React", "TypeScript", "Next.js", "Tailwind", "Ant Design", "Docker"],
+    year: "2025",
+  },
+  {
+    title: "Worktime Board",
+    description:
+      "Whiteboard-доска для визуального учёта нагрузки сотрудников с учётом ставки и месячной нормы часов",
+    github: "https://github.com/gosvoh/edit-worktime",
+    image: WorktimeLogo,
+    tasks:
+      "Самостоятельная fullstack-разработка: интерактивная доска, drag-and-drop, авторизация и RBAC, real-time через WebSocket, Docker, SQLite",
+    stack: [
+      "React",
+      "TypeScript",
+      "Bun",
+      "Vite",
+      "Tailwind",
+      "SQLite",
+      "WebSocket",
+      "Docker",
+    ],
+    year: "2026",
+  },
+  {
+    title: "Свадебный планер",
+    description:
+      "Персональный планер свадьбы: 11 разделов (гости, бюджет, задачи, расписание, меню и др.), роли editor/viewer",
+    github: "https://github.com/gosvoh/wedding-planner",
+    image: WeddingLogo,
+    tasks:
+      "Самостоятельная fullstack-разработка: Bun-сервер, React 19 SPA, Drizzle ORM, ACL, бэкапы, тесты, Docker",
+    stack: [
+      "React",
+      "TypeScript",
+      "Bun",
+      "Tailwind",
+      "Drizzle",
+      "SQLite",
+      "shadcn/ui",
+      "Docker",
+      "Claude",
+    ],
+    year: "2026",
+  },
+  {
     title: "BIOCON",
     description:
       "Сайт международной конференции по промышленной биотехнологии — командная разработка",
@@ -135,7 +190,6 @@ export const PROJECTS: Project[] = [
       "Командная fullstack-разработка: frontend, backend, Drizzle ORM, SEO",
     stack: ["React", "TypeScript", "Next.js", "Tailwind", "Drizzle"],
     year: "2024",
-    featured: true,
   },
   {
     title: "LMS 2.0 / cs.itmo.ru",
@@ -147,6 +201,7 @@ export const PROJECTS: Project[] = [
       "Frontend-разработка: компоненты, интеграция с API, адаптивность, обновление UI",
     stack: ["React", "TypeScript", "Vite", "Tailwind", "antd", "Editor.js"],
     year: "2023",
+    featured: true,
   },
   {
     title: "Narupa ITMO SCAMT",
@@ -177,6 +232,7 @@ export const PROJECTS: Project[] = [
     title: "SEROVA.CAREERS",
     description: "Сайт-визитка Надежды Серовой — карьерного консультанта",
     url: "https://serova.careers",
+    github: "https://github.com/gosvoh/serova-careers",
     image: "https://serova.careers/favicon.ico",
     tasks: "Дизайн, вёрстка, backend, SEO",
     stack: ["React", "TypeScript", "Next.js", "Tailwind"],
@@ -197,7 +253,6 @@ export const PROJECTS: Project[] = [
     title: "editorjs-antd-renderer",
     description:
       "Open-source библиотека для рендера контента Editor.js с использованием компонентов Ant Design. Опубликована на npm",
-    url: "https://github.com/gosvoh/editorjs-antd-renderer",
     github: "https://github.com/gosvoh/editorjs-antd-renderer",
     image: EditorjsLogo,
     stack: ["TypeScript", "React", "Ant Design", "Editor.js", "npm"],
