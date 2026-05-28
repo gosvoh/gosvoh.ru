@@ -1,6 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Images } from "lucide-react";
 import type { Project } from "@/data/site";
+import { getProjectScreenshots } from "@/data/site";
 import { cn } from "@/lib/utils";
+import ProjectGallery from "@/components/ProjectGallery";
 
 export default function ProjectCard({
   p,
@@ -10,6 +13,9 @@ export default function ProjectCard({
   featured?: boolean;
 }) {
   const ref = useRef<HTMLElement | null>(null);
+  const slides = getProjectScreenshots(p);
+  const hasGallery = slides.length > 0;
+  const [galleryOpen, setGalleryOpen] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -31,7 +37,7 @@ export default function ProjectCard({
     .toUpperCase();
 
   const cleanUrl = p.url ? p.url.replace(/^https?:\/\/|\/$/g, "") : null;
-  const hasFooter = Boolean(cleanUrl || p.github);
+  const hasFooter = Boolean(cleanUrl || p.github || hasGallery);
 
   return (
     <article
@@ -110,6 +116,16 @@ export default function ProjectCard({
           <span aria-hidden="true" />
         )}
         <div className="flex gap-2">
+          {hasGallery && (
+            <button
+              type="button"
+              className="grid size-7.5 place-items-center rounded-lg border border-line bg-bg-glass-strong text-fg-muted transition-all duration-200 hover:-translate-y-px hover:border-line-strong hover:text-fg"
+              onClick={() => setGalleryOpen(true)}
+              aria-label="Открыть скриншоты"
+            >
+              <Images width={14} height={14} />
+            </button>
+          )}
           {p.url && (
             <a
               className="grid size-7.5 place-items-center rounded-lg border border-line bg-bg-glass-strong text-fg-muted transition-all duration-200 hover:-translate-y-px hover:border-line-strong hover:text-fg"
@@ -150,6 +166,14 @@ export default function ProjectCard({
           )}
         </div>
       </footer>
+      )}
+
+      {hasGallery && (
+        <ProjectGallery
+          slides={slides}
+          open={galleryOpen}
+          onClose={() => setGalleryOpen(false)}
+        />
       )}
     </article>
   );
