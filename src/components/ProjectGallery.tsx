@@ -11,19 +11,16 @@ export type GallerySlide = { src: string; alt: string };
 export default function ProjectGallery({
   slides,
   open,
-  index = 0,
   onClose,
 }: {
   slides: GallerySlide[];
   open: boolean;
-  index?: number;
   onClose: () => void;
 }) {
   return (
     <Lightbox
       open={open}
       close={onClose}
-      index={index}
       slides={slides}
       plugins={[Thumbnails, Zoom, Counter]}
       carousel={{ finite: slides.length <= 1 }}
