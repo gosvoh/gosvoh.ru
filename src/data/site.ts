@@ -300,7 +300,7 @@ export function getProjectScreenshots(
   const prefix = `../assets/screenshots/${project.slug}/`;
   return Object.entries(screenshotModules)
     .filter(([path]) => path.startsWith(prefix))
-    .sort(([a], [b]) => a.localeCompare(b))
+    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
     .map(([, src], i) => ({
       src,
       alt: `${project.title} — скриншот ${i + 1}`,
