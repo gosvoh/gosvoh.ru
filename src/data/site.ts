@@ -4,12 +4,18 @@ import EditorjsLogo from "@/assets/editorjs-logo.svg";
 import WorktimeLogo from "@/assets/worktime-logo.svg";
 import WeddingLogo from "@/assets/wedding-logo.svg";
 
+const screenshotModules = import.meta.glob<string>(
+  "../assets/screenshots/**/*.webp",
+  { eager: true, import: "default" },
+);
+
 export type Project = {
   title: string;
   description: string;
   url?: string;
   github?: string;
   image?: string;
+  slug?: string;
   tasks?: string;
   stack?: string[];
   year: string;
@@ -114,6 +120,7 @@ export const PROJECTS: Project[] = [
       "Полный fullstack кроме дизайна: frontend, backend, архитектура, адаптивность, анимации, SEO",
     stack: ["React", "TypeScript", "Next.js", "Tailwind"],
     year: "2023",
+    slug: "biotech-industries",
     featured: true,
   },
   {
@@ -125,6 +132,7 @@ export const PROJECTS: Project[] = [
       "Самостоятельная fullstack-разработка: frontend, backend на Prisma, аутентификация Auth.js, SEO",
     stack: ["React", "TypeScript", "Next.js", "Tailwind", "Prisma", "Auth.js"],
     year: "2026",
+    slug: "biotech-faculty",
   },
   {
     title: "Biotech.Foundation",
@@ -137,6 +145,7 @@ export const PROJECTS: Project[] = [
       "Самостоятельная fullstack-разработка: Next.js 16 (App Router, standalone), форма регистрации со server actions и SMTP-рассылкой, Docker, Pino-логи",
     stack: ["React", "TypeScript", "Next.js", "Tailwind", "Ant Design", "Docker"],
     year: "2025",
+    slug: "biotech-foundation",
   },
   {
     title: "Worktime Board",
@@ -157,6 +166,7 @@ export const PROJECTS: Project[] = [
       "Docker",
     ],
     year: "2026",
+    slug: "worktime",
   },
   {
     title: "Свадебный планер",
@@ -178,6 +188,7 @@ export const PROJECTS: Project[] = [
       "Claude",
     ],
     year: "2026",
+    slug: "wedding",
   },
   {
     title: "BIOCON",
@@ -190,6 +201,7 @@ export const PROJECTS: Project[] = [
       "Командная fullstack-разработка: frontend, backend, Drizzle ORM, SEO",
     stack: ["React", "TypeScript", "Next.js", "Tailwind", "Drizzle"],
     year: "2024",
+    slug: "biocon",
   },
   {
     title: "LMS 2.0 / cs.itmo.ru",
@@ -201,6 +213,7 @@ export const PROJECTS: Project[] = [
       "Frontend-разработка: компоненты, интеграция с API, адаптивность, обновление UI",
     stack: ["React", "TypeScript", "Vite", "Tailwind", "antd", "Editor.js"],
     year: "2023",
+    slug: "lms",
     featured: true,
   },
   {
@@ -215,6 +228,7 @@ export const PROJECTS: Project[] = [
       "Разработка на Unity + C#, интеграция Eye Tracking для HTC Vive Pro Eye",
     stack: ["Unity", "C#", "SRanipal", "Python"],
     year: "2022",
+    slug: "narupa",
   },
   {
     title: "Get exp for everything",
@@ -227,6 +241,7 @@ export const PROJECTS: Project[] = [
     tasks: "Разработка мода на Java с Minecraft Forge",
     stack: ["Java", "Minecraft Forge"],
     year: "2022",
+    slug: "get-exp",
   },
   {
     title: "SEROVA.CAREERS",
@@ -237,6 +252,7 @@ export const PROJECTS: Project[] = [
     tasks: "Дизайн, вёрстка, backend, SEO",
     stack: ["React", "TypeScript", "Next.js", "Tailwind"],
     year: "2024",
+    slug: "serova",
   },
   {
     title: "Kover roller",
@@ -248,6 +264,7 @@ export const PROJECTS: Project[] = [
       "https://raw.githubusercontent.com/gosvoh/kover_under_games/main/public/pepe-peepo.gif",
     stack: ["React", "TypeScript", "Next.js"],
     year: "2023",
+    slug: "kover",
   },
   {
     title: "editorjs-antd-renderer",
@@ -257,6 +274,7 @@ export const PROJECTS: Project[] = [
     image: EditorjsLogo,
     stack: ["TypeScript", "React", "Ant Design", "Editor.js", "npm"],
     year: "2024",
+    slug: "editorjs-renderer",
     tasks:
       "Дизайн API, реализация рендера всех базовых блоков, типизация, публикация в npm-реестре, документация",
     featured: true,
@@ -274,3 +292,17 @@ export const SOCIALS: Social[] = [
     glyph: "DC",
   },
 ];
+
+export function getProjectScreenshots(
+  project: Project,
+): { src: string; alt: string }[] {
+  if (!project.slug) return [];
+  const prefix = `../assets/screenshots/${project.slug}/`;
+  return Object.entries(screenshotModules)
+    .filter(([path]) => path.startsWith(prefix))
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, src], i) => ({
+      src,
+      alt: `${project.title} — скриншот ${i + 1}`,
+    }));
+}
