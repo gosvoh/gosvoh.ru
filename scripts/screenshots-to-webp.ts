@@ -6,10 +6,12 @@ const ROOT = "src/assets/screenshots";
 const MAX_EDGE = 1600;
 const QUALITY = 80;
 
-const glob = new Glob("**/*.{png,jpg,jpeg,PNG,JPG,JPEG}");
+const glob = new Glob("**/*");
+const SOURCE_EXTS = new Set([".png", ".jpg", ".jpeg"]);
 
 let converted = 0;
 for await (const rel of glob.scan(ROOT)) {
+  if (!SOURCE_EXTS.has(extname(rel).toLowerCase())) continue;
   const input = `${ROOT}/${rel}`;
   const output = input.slice(0, -extname(input).length) + ".webp";
 
