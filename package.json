@@ -8,7 +8,8 @@
     "build": "bunx --bun vite build",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "bunx --bun vite preview",
-    "npm:build": "vite build"
+    "npm:build": "vite build",
+    "screenshots": "bun scripts/screenshots-to-webp.ts"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.13.0",
