@@ -126,7 +126,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Факультет биотехнологий ИТМО",
     description: "Обновлённый сайт факультета биотехнологий Университета ИТМО",
-    url: "https://biotech.cedne.ru/",
+    url: "https://biotech.itmo.ru/",
     image: "https://biotech.industries/favicon.ico",
     tasks:
       "Самостоятельная fullstack-разработка: frontend, backend на Prisma, аутентификация Auth.js, SEO",
