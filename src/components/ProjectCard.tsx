@@ -119,7 +119,7 @@ export default function ProjectCard({
           {hasGallery && (
             <button
               type="button"
-              className="grid size-7.5 place-items-center rounded-lg border border-line bg-bg-glass-strong text-fg-muted transition-all duration-200 hover:-translate-y-px hover:border-line-strong hover:text-fg"
+              className="grid size-7.5 place-items-center rounded-lg border border-line bg-bg-glass-strong text-fg-muted transition-all duration-200 hover:-translate-y-px hover:border-line-strong hover:text-fg hover:cursor-pointer"
               onClick={() => setGalleryOpen(true)}
               aria-label="Открыть скриншоты"
             >
