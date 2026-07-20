@@ -115,6 +115,7 @@ export const PROJECTS: Project[] = [
     description:
       "Сайт подразделения факультета биотехнологий ИТМО — самостоятельная fullstack-разработка",
     url: "https://biotech.industries",
+    github: "https://github.com/gosvoh/biotech.industries",
     image: "https://biotech.industries/favicon.ico",
     tasks:
       "Полный fullstack кроме дизайна: frontend, backend, архитектура, адаптивность, анимации, SEO",
@@ -127,6 +128,7 @@ export const PROJECTS: Project[] = [
     title: "Факультет биотехнологий ИТМО",
     description: "Обновлённый сайт факультета биотехнологий Университета ИТМО",
     url: "https://biotech.itmo.ru/",
+    github: "https://github.com/gosvoh/biotech",
     image: "https://biotech.industries/favicon.ico",
     tasks:
       "Самостоятельная fullstack-разработка: frontend, backend на Prisma, аутентификация Auth.js, SEO",
